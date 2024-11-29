@@ -71,9 +71,14 @@ const MoodLogger = ({ child, register }) => {
               </button>
             ))}
           </div>
+
+          {selectedMood ? (
             <div className="text-center text-gray-600 italic">
-             {selectedMood?.description ?? "     "}
-            </div> 
+              {selectedMood.description}
+            </div>) : (<div className="text-center text-white">.
+            </div>)
+          }
+
           <button
             onClick={handleSubmit}
             disabled={!selectedMood || submitted}
