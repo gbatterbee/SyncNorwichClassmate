@@ -34,16 +34,19 @@ export default function App() {
     
   }
 
-  return <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
+  return <><div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-screen-lg bg-white rounded-2xl shadow-xl overflow-hidden">
+
     {page==="childList" && <ChildRegistration children={children} select={handleSelect}/>}
     {page==="register" && <MoodLoggerTW child={child} register={handleRegister}/>}
     {page==="dashboard" && <TeacherPage children={children}/>}
 
-    <button onClick={()=>{setPage('childList')}}>Reset</button>  
+    </div>
+  </div>
+  <button onClick={()=>{setPage('childList')}}>Reset</button>  
     <button onClick={()=>{setPage('childList')}}>Child</button>  
     <button onClick={()=>{setPage('dashboard')}}>Dashboard</button>
-
-  </div>
+</>
 }
 
 import React from 'react';

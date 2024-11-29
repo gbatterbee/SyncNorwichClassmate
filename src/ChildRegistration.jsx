@@ -21,20 +21,20 @@ const ChildRegistration = ({children, select}) => {
 
   return (
     <>
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden">
         <div className="bg-blue-600 text-white text-center py-6">
           <h2 className="text-2xl font-bold">Hello</h2>
         </div>
 
         <div className="p-6 space-y-6">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-6 gap-4">
             {children.map((child) => (
               <button
                 key={child.id}
                 onClick={() => handleChildSelect(child)}
                 className={`
                   flex flex-col items-center justify-center 
-                  p-4 rounded-lg transition-all 
+                  p-4 rounded-lg transition-all
+                  max-w-sm 
                   ${selectedChild?.id === child.id 
                     ? 'bg-blue-100 ring-2 ring-blue-400 scale-105' 
                     : 'bg-gray-50 hover:bg-gray-100 hover:shadow-md'}
@@ -54,7 +54,7 @@ const ChildRegistration = ({children, select}) => {
           
        
         </div>
-      </div>
+      
     </>
   );
 };
