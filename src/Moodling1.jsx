@@ -1,4 +1,4 @@
-const MonsterIco = () => <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+const Moodling1 = () => <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="100" cy="100" r="100" fill="#D9F5DB"/>
 <circle cx="99.9999" cy="99.9999" r="77.7778" fill="#B1EBB5"/>
 <path d="M155.11 99.5549C155.11 107.691 153.358 115.418 150.207 122.384C147.407 128.605 143.495 134.204 138.723 138.952C135.072 142.586 130.914 145.713 126.362 148.226C118.414 152.613 109.279 155.11 99.555 155.11C89.8306 155.11 80.9575 152.687 73.0912 148.414C68.0244 145.664 63.4324 142.152 59.4788 138.027C54.6903 133.042 50.8267 127.165 48.1582 120.665C45.4734 114.158 44 107.028 44 99.5549C44 68.8675 68.8757 44 99.555 44C130.234 44 155.11 68.8675 155.11 99.5549Z" fill="white"/>
@@ -21,4 +21,4 @@ const MonsterIco = () => <svg width="200" height="200" viewBox="0 0 200 200" fil
 </svg>
 
 
-export default MonsterIco;
+export default Moodling1;
