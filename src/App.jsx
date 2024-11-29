@@ -24,7 +24,7 @@ export default function App() {
 
   const handleSelect = (child) =>{
     console.log({child})
-
+    setPage('register')
     setChild(child);
   }
 
@@ -32,6 +32,9 @@ export default function App() {
     {page==="childList" && <ChildRegistration children={children} select={handleSelect}/>}
     {page==="register" && <MoodLoggerTW child={child}/>}
     {page==="dashboard" && <TeacherPage children={children}/>}
+    
+    <button onClick={()=>{setPage('childList')}}>Reset</button>
+
   </div>
 }
 
@@ -48,6 +51,7 @@ const students = [
 const TeacherPage = () => {
   return (
     <div className="container mx-auto p-4">
+
       <h1 className="text-2xl font-bold mb-4">Teacher's Page</h1>
       <table className="min-w-full bg-white">
         <thead className="bg-gray-800 text-white">
