@@ -60,7 +60,7 @@ const KidsNameGrid = () => {
         {kids.map((kid) => (
           <div
             key={kid.id}
-            className={`kid-card ${kid.favorite ? "favorite" : ""}`}
+            className={`kid-card ${kid.favorite ? "favorit    e" : ""}`}
           >
             <div className="kid-header">
               <h2>{kid.name}</h2>

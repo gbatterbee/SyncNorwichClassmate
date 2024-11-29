@@ -20,7 +20,6 @@ const ChildRegistration = ({children, select}) => {
   const handleRegister = () => {
     if (selectedChild) {
       setIsRegistered(true);
-      // In a real app, this would send registration data to backend
       setTimeout(() => {
         setIsRegistered(false);
         select(null);

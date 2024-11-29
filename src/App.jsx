@@ -23,17 +23,23 @@ export default function App() {
   );
 
   const handleSelect = (child) =>{
-    console.log({child})
     setPage('register')
+    setChild(child);
+  }
+
+  const handleRegister = (mood) =>{
+    console.log({handleRegister:mood})
+    setPage('childList')
     setChild(child);
   }
 
   return <div>
     {page==="childList" && <ChildRegistration children={children} select={handleSelect}/>}
-    {page==="register" && <MoodLoggerTW child={child}/>}
+    {page==="register" && <MoodLoggerTW child={child} register={handleRegister}/>}
     {page==="dashboard" && <TeacherPage children={children}/>}
-    
-    <button onClick={()=>{setPage('childList')}}>Reset</button>
+
+    <button onClick={()=>{setPage('childList')}}>Reset</button>  
+    <button onClick={()=>{setPage('dashboard')}}>Dashboard</button>
 
   </div>
 }
