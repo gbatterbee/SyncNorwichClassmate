@@ -50,8 +50,9 @@ const MoodLogger = ({ child, register }) => {
 
   return (
     <>
-      <div className="bg-blue-600 text-white text-center py-6">
-        <h2 className="text-2xl font-bold">How are you feeling today??</h2>
+      <div className="text-center py-6">
+        <h2 className="text-2xl font-bold">Hi <span style={{ color: 'f6a21d' }}>{child.name}</span>,</h2>
+        <h2 className="text-2xl font-bold">How are you <span style={{ color: 'f6a21d' }}>feeling</span> today?</h2>
       </div>
 
       <div className="p-6 space-y-6">
@@ -70,7 +71,7 @@ const MoodLogger = ({ child, register }) => {
                 `}
             >
               <span className="text-5xl mb-2">{mood.emoji}</span>
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-bold text-gray-700 font-sans">
                 {mood.label}
               </span>
             </button>
