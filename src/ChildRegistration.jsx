@@ -14,6 +14,7 @@ const ChildRegistration = ({children, select}) => {
 
   const handleChildSelect = (child) => {
     setSelectedChild(child);
+    select(child)
   };
 
   const handleRegister = () => {

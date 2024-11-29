@@ -22,10 +22,14 @@ export default function App() {
     { id: 1, name: 'Emma', avatar: '👧' },
   );
 
-  console.log({page})
+  const handleSelect = (child) =>{
+    console.log({child})
+
+    setChild(child);
+  }
 
   return <div>
-    {page==="childList" && <ChildRegistration children={children} select={()=>setChild(child)}/>}
+    {page==="childList" && <ChildRegistration children={children} select={handleSelect}/>}
     {page==="register" && <MoodLoggerTW child={child}/>}
     {page==="dashboard" && <TeacherPage children={children}/>}
   </div>
