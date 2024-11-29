@@ -43,14 +43,13 @@ const MoodLogger = ({ child, register }) => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-4">
-      <div className="w-full max-w-md bg-white shadow-xl rounded-2xl overflow-hidden">
+      <>
         <div className="bg-blue-600 text-white text-center py-6">
           <h2 className="text-2xl font-bold">How are you feeling today?</h2>
         </div>
 
         <div className="p-6 space-y-6">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-5 gap-4">
             {moods.map((mood) => (
               <button
                 key={mood.label}
@@ -67,18 +66,14 @@ const MoodLogger = ({ child, register }) => {
               >
                 <span className="text-5xl mb-2">{mood.emoji}</span>
                 <span className="text-sm font-medium text-gray-700">
-                  {mood.label}
+                  {mood.label} 
                 </span>
               </button>
             ))}
           </div>
-
-          {selectedMood && (
             <div className="text-center text-gray-600 italic">
-              {selectedMood.description}
-            </div>
-          )}
-
+             {selectedMood?.description ?? "     "}
+            </div> 
           <button
             onClick={handleSubmit}
             disabled={!selectedMood || submitted}
@@ -97,8 +92,7 @@ const MoodLogger = ({ child, register }) => {
             {submitted ? "Thanks for sharing! 👍" : "Register"}
           </button>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 
