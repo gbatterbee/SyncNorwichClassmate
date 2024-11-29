@@ -1,7 +1,7 @@
-const days=['mon','tue','wed','thu','fri'];
+const days = ['mon', 'tue', 'wed', 'thu', 'fri'];
 
-const TeacherPage = ({children}) => {
-  console.log({children})
+const TeacherPage = ({ children }) => {
+  console.log({ children })
   return (
     <div className="container mx-auto p-4">
 
@@ -31,17 +31,16 @@ const TeacherPage = ({children}) => {
           {children.map((child, index) => (
             <tr key={index} className="bg-gray-100">
               <td className="border px-4 py-2">{child.name}</td>
-              {/* <td className="border px-4 py-2">{ child.registration['mon'] }</td> */}
+              <td className="border px-4 py-2">{ child.registration['mon'] ? 'Yep' : 'Nope' }</td> 
               <td className="border px-4 py-2">
                 <div className="grid grid-cols-5 gap-2">
-                  {/* <div> {registration['mon']}</div>
-                  <div>
-                    {registration['tue']}</div>
-                  <div> {registration['wed']}</div>
-                  <div> {registration['thu']}</div>
-                  <div> {registration['fri']}</div> */}
+                  <div>{child.registration['mon']?.emoji}</div>
+                  <div>{child.registration['tue']?.emoji}</div>
+                  <div>{child.registration['wed']?.emoji}</div>
+                  <div>{child.registration['thu']?.emoji}</div>
+                  <div>{child.registration['fri']?.emoji}</div>
                 </div>
-              </td> 
+              </td>
             </tr>
           ))}
         </tbody>

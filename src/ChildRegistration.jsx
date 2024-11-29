@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import MonsterIco from './Monster'
 const ChildRegistration = ({children, select}) => {
   // const [children, setChildren] = useState([
   //   { id: 1, name: 'Emma', avatar: '👧' },
@@ -48,7 +48,7 @@ const ChildRegistration = ({children, select}) => {
                     : 'bg-gray-50 hover:bg-gray-100 hover:shadow-md'}
                 `}
               >
-                <span className="text-5xl mb-2">{child.avatar}</span>
+                <span className="text-5xl mb-2"><MonsterIco/></span>
                 <span className="text-sm font-medium text-gray-700">{child.name}</span>
               </button>
             ))}
@@ -60,21 +60,7 @@ const ChildRegistration = ({children, select}) => {
             </div>
           )}
           
-          <button
-            onClick={handleRegister}
-            disabled={!selectedChild || isRegistered}
-            className={`
-              w-full py-3 px-4 rounded-lg font-semibold 
-              transition-all duration-300 ease-in-out 
-              ${isRegistered 
-                ? 'bg-green-500 text-white' 
-                : selectedChild 
-                  ? 'bg-blue-500 hover:bg-blue-600 text-white transform hover:scale-[1.02]' 
-                  : 'bg-gray-200 text-gray-400 cursor-not-allowed'}
-            `}
-          >
-            {isRegistered ? 'Registered! 🎉' : 'Register'}
-          </button>
+       
         </div>
       </div>
     </div>

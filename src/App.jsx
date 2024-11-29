@@ -10,10 +10,10 @@ export default function App() {
   const [page,setPage] = useState("childList");
   const [children, setChildren] = useState([
     { id: 1, name: 'Emma', avatar: '👧' , registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 2, name: 'Liam', avatar: '👦' , registration: { mon: {}, tue: '', wed: '', thu: '', fri: '' } },
-    { id: 3, name: 'Olivia', avatar: '👧', registration: { mon: '', tue: '', wed: '', thu: '', fri: '' }  },
-    { id: 4, name: 'Noah', avatar: '👦' , registration: { mon: '', tue: '', wed: '', thu: '', fri: '' } },
-    { id: 5, name: 'Sophia', avatar: '👧', registration: { mon: '', tue: '', wed: '', thu: '', fri: '' }  }
+    { id: 2, name: 'Liam', avatar: '👦' , registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 3, name: 'Olivia', avatar: '👧', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} }  },
+    { id: 4, name: 'Noah', avatar: '👦' , registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 5, name: 'Sophia', avatar: '👧', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} }  }
   ]);
 
   const [child, setChild] = useState();
@@ -41,6 +41,7 @@ export default function App() {
     {page==="dashboard" && <TeacherPage children={children}/>}
 
     <button onClick={()=>{setPage('childList')}}>Reset</button>  
+    <button onClick={()=>{setPage('childList')}}>Child</button>  
     <button onClick={()=>{setPage('dashboard')}}>Dashboard</button>
 
   </div>
