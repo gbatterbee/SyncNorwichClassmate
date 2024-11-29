@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import MonsterIco from './Monster'
-const ChildRegistration = ({children, select}) => {
+import MonsterIco from './svg/Monster'
+const ChildRegistration = ({children, select, today}) => {
   const [selectedChild, setSelectedChild] = useState(null);
-  const [isRegistered, setIsRegistered] = useState(false);
+  //const [isRegistered, setIsRegistered] = useState(false);
 
   const handleChildSelect = (child) => {
     setSelectedChild(child);
     select(child)
   };
 
-  const handleRegister = () => {
-    if (selectedChild) {
-      setIsRegistered(true);
-      setTimeout(() => {
-        setIsRegistered(false);
-        select(null);
-      }, 2000);
-    }
-  };
-
+  // const handleRegister = () => {
+  //   if (selectedChild) {
+  //     setIsRegistered(true);
+  //     setTimeout(() => {
+  //       setIsRegistered(false);
+  //       select(null);
+  //     }, 2000);
+  //   }
+  // };
+console.log({children})
   return (
     <>
         <div className="bg-blue-600 text-white text-center py-6">
@@ -40,7 +40,7 @@ const ChildRegistration = ({children, select}) => {
                     : 'bg-gray-50 hover:bg-gray-100 hover:shadow-md'}
                 `}
               >
-                <span className="text-5xl mb-2"><MonsterIco colour={child.avatar}/></span>
+                <span className="text-5xl mb-2"><MonsterIco colour={child.avatar} opacity={child.registration[today]?0.1:1} /></span>
                 <span className="text-sm font-medium text-gray-700">{child.name}</span>
               </button>
             ))}

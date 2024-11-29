@@ -1,59 +1,51 @@
 import React, { useState } from "react";
-import Moodling1 from "./Moodling1";
-import Moodling2 from "./Moodling2";
-import Moodling3 from "./Moodling3";
-import Moodling4 from "./Moodling4";
-import Moodling5 from "./Moodling5";
+import Moodling1 from "./svg/Moodling1";
+import Moodling2 from "./svg/Moodling2";
+import Moodling3 from "./svg/Moodling3";
+import Moodling4 from "./svg/Moodling4";
+import Moodling5 from "./svg/Moodling5";
+import { DarkGreenDot, LightGreenDot, YellowDot, OrangeDot, RedDot } from "./svg/Dot";
 
 const MoodLogger = ({ child, register }) => {
   const [selectedMood, setSelectedMood] = useState(null);
-  const [submitted, setSubmitted] = useState(false);
 
   const moods = [
     {
       emoji: <Moodling5 />,
-      label: "Very Good!",
+      indicator: <RedDot />,
+      label: "Very bad",
       description: "I'm not feeling great",
       color: "bg-blue-100",
     }, {
       emoji: <Moodling4 />,
-      label: "Good",
+      indicator: <OrangeDot />,
+      label: "Bad",
       description: "I'm not feeling great",
       color: "bg-blue-100",
     }, {
       emoji: <Moodling3 />,
-      label: "Okay",
+      indicator: <YellowDot />,
+      label: "Good",
       description: "I'm not feeling great",
       color: "bg-blue-100",
     }, {
       emoji: <Moodling2 />,
-      label: "Bad",
+      indicator: <LightGreenDot />,
+      label: "Okay",
       description: "I'm feeling just okay",
       color: "bg-gray-100",
     },
     {
       emoji: <Moodling1 />,
-      label: "Very bad",
+      indicator: <DarkGreenDot />,
+      label: "Very Good!",
       description: "I'm having a good day!",
       color: "bg-yellow-100",
     },
   ];
 
   const handleMoodSelect = (mood) => {
-    setSelectedMood(mood);
-  };
-
-  const handleSubmit = () => {
-    if (selectedMood) {
-      setSubmitted(true);
-      register(selectedMood);
-
-      // In a real app, this would send the data to a backend
-      setTimeout(() => {
-        setSubmitted(false);
-        setSelectedMood(null);
-      }, 2000);
-    }
+    register(mood);
   };
 
   return (
@@ -91,23 +83,6 @@ const MoodLogger = ({ child, register }) => {
           </div>) : (<div className="text-center text-white">.
           </div>)
         }
-
-        <button
-          onClick={handleSubmit}
-          disabled={!selectedMood || submitted}
-          className={`
-              w-full py-3 px-4 rounded-lg font-semibold 
-              transition-all duration-300 ease-in-out 
-              ${submitted
-              ? "bg-green-500 text-white"
-              : selectedMood
-                ? "bg-blue-500 hover:bg-blue-600 text-white transform hover:scale-[1.02]"
-                : "bg-gray-200 text-gray-400 cursor-not-allowed"
-            }
-            `}
-        >
-          {submitted ? "Thanks for sharing! 👍" : "Register"}
-        </button>
       </div>
     </>
   );
