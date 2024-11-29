@@ -4,12 +4,30 @@ import MoodLoggerTW from "./MoodLoggerTW";
 import KidsNameGrid from "./KidsNameGrid";
 import RegistrationSummary from "./RegistrationSummary";
 import ChildRegistration from "./ChildRegistration";
+import { useState } from "react";
 
 
 export default function App() {
-  return <div><ChildRegistration/><MoodLoggerTW/><RegistrationSummary/><TeacherPage/>
-  
-  
+  const today = 'mon';
+  const [page,setPage] = useState("childList");
+  const [children, setChildren] = useState([
+    { id: 1, name: 'Emma', avatar: '👧' , registration: { mon: '', tue: '', wed: '', thu: '', fri: '' } },
+    { id: 2, name: 'Liam', avatar: '👦' , registration: { mon: '', tue: '', wed: '', thu: '', fri: '' } },
+    { id: 3, name: 'Olivia', avatar: '👧', registration: { mon: '', tue: '', wed: '', thu: '', fri: '' }  },
+    { id: 4, name: 'Noah', avatar: '👦' , registration: { mon: '', tue: '', wed: '', thu: '', fri: '' } },
+    { id: 5, name: 'Sophia', avatar: '👧', registration: { mon: '', tue: '', wed: '', thu: '', fri: '' }  }
+  ]);
+
+  const [child, setChild] = useState(
+    { id: 1, name: 'Emma', avatar: '👧' },
+  );
+
+  console.log({page})
+
+  return <div>
+    {page==="childList" && <ChildRegistration children={children} select={()=>setChild(child)}/>}
+    {page==="register" && <MoodLoggerTW child={child}/>}
+    {page==="dashboard" && <TeacherPage children={children}/>}
   </div>
 }
 
@@ -32,21 +50,35 @@ const TeacherPage = () => {
           <tr>
             <th className="w-1/3 px-4 py-2">Name</th>
             <th className="w-1/3 px-4 py-2">Registration Status</th>
-            <th className="w-1/3 px-4 py-2">Mood Indicator</th>
+            <th className="w-1/3 px-4 py-2">Week Indicator</th>
           </tr>
         </thead>
         <tbody>
+          <tr className="bg-gray-100">
+            <td className="border px-4 py-2">Name</td>
+            <td className="border px-4 py-2">Registered</td>
+            <td className="border px-4 py-2">
+              <div className="grid grid-cols-5 gap-2">
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+              </div>
+            </td>
+          </tr>
           {students.map((student, index) => (
             <tr key={index} className="bg-gray-100">
               <td className="border px-4 py-2">{student.name}</td>
               <td className="border px-4 py-2">{student.status}</td>
               <td className="border px-4 py-2">
                 <div className="grid grid-cols-5 gap-2">
-                  <div>Mon: {student.mood.mon}</div>
-                  <div>Tue: {student.mood.tue}</div>
-                  <div>Wed: {student.mood.wed}</div>
-                  <div>Thu: {student.mood.thu}</div>
-                  <div>Fri: {student.mood.fri}</div>
+                  <div> {student.mood.mon}</div>
+                  <div>
+                    {student.mood.tue}</div>
+                  <div> {student.mood.wed}</div>
+                  <div> {student.mood.thu}</div>
+                  <div> {student.mood.fri}</div>
                 </div>
               </td>
             </tr>
