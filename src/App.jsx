@@ -4,40 +4,48 @@ import TeacherPage from "./TeacherPage";
 import ChildRegistration from "./ChildRegistration";
 import { useState } from "react";
 
+
+
+
+
+
+
+
+
 export default function App() {
   const today = 'mon';
   const [page, setPage] = useState("childList");
   const [children, setChildren] = useState([
-    { id: 1, name: 'Emma', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 2, name: 'Liam', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 3, name: 'Olivia', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 4, name: 'Noah', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 5, name: 'Sophia', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 6, name: 'Emma', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 7, name: 'Liam', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 8, name: 'Olivia', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 9, name: 'Noah', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 10, name: 'Sophia', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 11, name: 'Emma', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 12, name: 'Liam', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 13, name: 'Olivia', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 14, name: 'Noah', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 15, name: 'Sophia', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 16, name: 'Emma', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 17, name: 'Liam', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 18, name: 'Olivia', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 19, name: 'Noah', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 20, name: 'Sophia', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 21, name: 'Emma', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 22, name: 'Liam', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 23, name: 'Olivia', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 24, name: 'Noah', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 25, name: 'Sophia', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 26, name: 'Emma', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 27, name: 'Liam', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 28, name: 'Olivia', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 29, name: 'Noah', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
-    { id: 30, name: 'Sophia', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } }
+    { id: 1, name: 'Layla Carter', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 2, name: 'Anthony Nelson', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 3, name: 'Aria Baker', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 4, name: 'Sebastian Adams', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 5, name: 'Grace Green', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 6, name: 'Jackson Scott', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 7, name: 'Scarlett King', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 8, name: 'Matthew Wright', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 9, name: 'Ella Allen', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 10, name: 'Daniel Hall', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 11, name: 'Harper Young', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 12, name: 'Alexander Walker', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 13, name: 'Evelyn Lewis', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 14, name: 'Henry White', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 15, name: 'Amelia Jackson', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 16, name: 'Lucas Thomas', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 17, name: 'Charlotte Anderson', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 18, name: 'Benjamin Wilson', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 19, name: 'Mia Hernandez', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 20, name: 'James Martinez', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 21, name: 'Isabella Rodriguez', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 22, name: 'William Davis', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 23, name: 'Sophia Miller', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 24, name: 'Oliver Garcia', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 25, name: 'Ava Jones', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 26, name: 'Noah Williams', avatar: '9747FF', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 27, name: 'Liam Smith', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 28, name: 'Emma Johnson', avatar: 'AAF61D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 29, name: 'Olivia Brown', avatar: 'F61D89', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } },
+    { id: 30, name: 'Sophia Smith', avatar: 'F6A21D', registration: { mon: {}, tue: {}, wed: {}, thu: {}, fri: {} } }
   ]);
 
   const [child, setChild] = useState();

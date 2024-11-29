@@ -27,7 +27,7 @@ const ChildRegistration = ({children, select}) => {
 
         <div className="p-6 space-y-6">
           <div className="grid grid-cols-6 gap-4">
-            {children.map((child) => (
+            {children.sort((a,b)=>a.name.localeCompare(b.name)).map((child) => (
               <button
                 key={child.id}
                 onClick={() => handleChildSelect(child)}
