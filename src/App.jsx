@@ -1,10 +1,10 @@
 import "./styles.css";
+import React from 'react';
+import KidPage from "./KidPage";
 import MoodLoggerTW, { badMood, goodMood, okayMood, veryBadMood, veryGoodMood } from "./MoodLoggerTW";
 import TeacherPage from "./TeacherPage";
 import ChildRegistration from "./ChildRegistration";
 import { useState } from "react";
-
-// 
 
 export default function App() {
   const today = 'wed';
@@ -13,7 +13,7 @@ export default function App() {
     { id: 1, name: 'Layla Carter', avatar: '9747FF', registration: { mon: goodMood, tue: goodMood, wed: null, thu: null, fri:null } },
     { id: 2, name: 'Phil', avatar: 'F6A21D',img:'/assets/phil mcsweeney.jpeg', registration: { mon: goodMood, tue: goodMood, wed: null, thu: null, fri:null } },
     { id: 3, name: 'Aria Baker', avatar: 'AAF61D', registration: { mon: goodMood, tue: okayMood, wed: null, thu: null, fri:null } },
-    { id: 4, name: 'Chris Adams', avatar: 'F61D89', img:'Chris Sargisson.jpeg', registration: { mon: goodMood, tue: okayMood, wed: null, thu: null, fri:null } },
+    { id: 4, name: 'Chris Adams', avatar: 'F61D89', img:'/assets/chriss.jpeg', registration: { mon: goodMood, tue: okayMood, wed: null, thu: null, fri:null } },
     { id: 5, name: 'Ness', avatar: 'F6A21D', img:'/assets/ness dent.jpeg', registration: { mon: goodMood, tue: goodMood, wed: null, thu: null, fri:null } },
     { id: 6, name: 'Jackson Scott', avatar: '9747FF', registration: { mon: goodMood, tue: goodMood, wed: null, thu: null, fri:null } },
     { id: 7, name: 'Scarlett King', avatar: 'F6A21D', registration: { mon: goodMood, tue: goodMood, wed: null, thu: null, fri:null } },
@@ -43,7 +43,6 @@ export default function App() {
   ]);
 
   const [child, setChild] = useState();
-
   const handleSelect = (child) => {
     setPage('register')
     setChild(child);
@@ -58,17 +57,20 @@ export default function App() {
     setChildren(newChildren);
     console.log({ newChildren })
     setPage('childList')
+  }
 
+  const viewKid = () =>{
+    console.log('i got here')
+    setPage('kid')
   }
 
   return <>
   <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
     <div className="w-full max-w-screen-lg bg-white rounded-2xl shadow-xl overflow-hidden">
-
       {page === "childList" && <ChildRegistration children={children} select={handleSelect} today={today}/>}
       {page === "register" && <MoodLoggerTW child={child} register={handleRegister} />}
-      {page === "dashboard" && <TeacherPage children={children} />}
-
+      {page === "dashboard" && <TeacherPage children={children} viewKid={viewKid}/>}
+      {page === "kid" && <KidPage children={children} />}
     </div>
   </div>
     <button onClick={() => { setPage('childList') }}>Reset</button>
@@ -76,7 +78,4 @@ export default function App() {
     <button onClick={() => { setPage('dashboard') }}>Dashboard</button>
   </>
 }
-
-import React from 'react';
-
 

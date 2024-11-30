@@ -1,8 +1,7 @@
 import { GreyDot } from "./svg/Dot";
 
 
-const TeacherPage = ({ children }) => {
-
+const TeacherPage = ({ children, viewKid }) => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Teacher's Page</h1>
@@ -27,10 +26,12 @@ const TeacherPage = ({ children }) => {
           {children.map((child, index) => (
             <tr key={index} className="bg-gray-100">
               <td className="border px-4 py-2">
+                <a href="#" onClick={()=>viewKid(child)}>
                 <div className="grid grid-cols-2 gap-2">
                   <div>{child.name}</div>
                   <div>{child.registration?.['wed']?.indicator ?? <GreyDot />}</div>
-                </div></td>
+                </div>
+                </a></td>
               <td className="border px-4 py-2">
                 <div className="grid grid-cols-5 gap-2">
                   <div>{child.registration['mon']?.indicator}</div>
