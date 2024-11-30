@@ -9,44 +9,81 @@ import { DarkGreenDot, LightGreenDot, YellowDot, OrangeDot, RedDot } from "./svg
 const synth = window.speechSynthesis;
 const voice =synth.getVoices().find(v=>v.name==='Good news');
 
-console.log({voice})
+export const veryBadMood = {
+  emoji: <Moodling5 />,
+  indicator: <RedDot />,
+  label: "Very bad",
+  description: "I'm not feeling great",
+  color: "bg-blue-100",
+}; 
+export const badMood = {
+  emoji: <Moodling4 />,
+  indicator: <OrangeDot />,
+  label: "Bad",
+  description: "I'm not feeling great",
+  color: "bg-blue-100",
+}; 
+export const okayMood = {
+  emoji: <Moodling3 />,
+  indicator: <YellowDot />,
+  label: "Okay",
+  description: "I'm not feeling great",
+  color: "bg-blue-100",
+}; 
+export const goodMood = {
+  emoji: <Moodling2 />,
+  indicator: <LightGreenDot />,
+  label: "Good",
+  description: "I'm feeling just okay",
+  color: "bg-gray-100",
+};
+export const veryGoodMood = {
+  emoji: <Moodling1 />,
+  indicator: <DarkGreenDot />,
+  label: "Very Good!",
+  description: "I'm having a good day!",
+  color: "bg-yellow-100",
+};
+
+export const moods = [
+  {
+    emoji: <Moodling5 />,
+    indicator: <RedDot />,
+    label: "Very bad",
+    description: "I'm not feeling great",
+    color: "bg-blue-100",
+  }, {
+    emoji: <Moodling4 />,
+    indicator: <OrangeDot />,
+    label: "Bad",
+    description: "I'm not feeling great",
+    color: "bg-blue-100",
+  }, {
+    emoji: <Moodling3 />,
+    indicator: <YellowDot />,
+    label: "Good",
+    description: "I'm not feeling great",
+    color: "bg-blue-100",
+  }, {
+    emoji: <Moodling2 />,
+    indicator: <LightGreenDot />,
+    label: "Okay",
+    description: "I'm feeling just okay",
+    color: "bg-gray-100",
+  },
+  {
+    emoji: <Moodling1 />,
+    indicator: <DarkGreenDot />,
+    label: "Very Good!",
+    description: "I'm having a good day!",
+    color: "bg-yellow-100",
+  },
+];
+
 const MoodLogger = ({ child, register }) => {
   const [selectedMood, setSelectedMood] = useState(null);
 
-  const moods = [
-    {
-      emoji: <Moodling5 />,
-      indicator: <RedDot />,
-      label: "Very bad",
-      description: "I'm not feeling great",
-      color: "bg-blue-100",
-    }, {
-      emoji: <Moodling4 />,
-      indicator: <OrangeDot />,
-      label: "Bad",
-      description: "I'm not feeling great",
-      color: "bg-blue-100",
-    }, {
-      emoji: <Moodling3 />,
-      indicator: <YellowDot />,
-      label: "Good",
-      description: "I'm not feeling great",
-      color: "bg-blue-100",
-    }, {
-      emoji: <Moodling2 />,
-      indicator: <LightGreenDot />,
-      label: "Okay",
-      description: "I'm feeling just okay",
-      color: "bg-gray-100",
-    },
-    {
-      emoji: <Moodling1 />,
-      indicator: <DarkGreenDot />,
-      label: "Very Good!",
-      description: "I'm having a good day!",
-      color: "bg-yellow-100",
-    },
-  ];
+  
 
   const handleMoodSelect = (mood) => {
     const utterThis = new SpeechSynthesisUtterance('thank you!' + child.name);

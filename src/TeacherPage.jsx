@@ -11,23 +11,21 @@ const TeacherPage = ({ children }) => {
       <table className="min-w-full bg-white">
         <thead className="bg-gray-800 text-white">
           <tr>
-            <th className="w-1/3 px-4 py-2">Student</th>
-            <th className="w-2/3 px-4 py-2">Week Indicators</th>
+            <th className="w-1/3 px-4 py-2">Today</th>
+            <th className="w-2/3 px-4 py-2">This week</th>
           </tr>
         </thead>
         <tbody>
-          {/* <tr className="bg-gray-100">
-            <td className="border px-4 py-2">Name</td>
-            <td className="border px-4 py-2">
-              <div className="grid grid-cols-5 gap-2">
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-              </div>
-            </td>
-          </tr> */}
+          <tr>
+            <td></td>
+            <td>  <div className="grid grid-cols-5 gap-2">
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                </div></td>
+          </tr>
           {children.map((child, index) => (
             <tr key={index} className="bg-gray-100">
               <td className="border px-4 py-2">
