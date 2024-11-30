@@ -6,6 +6,10 @@ import Moodling4 from "./svg/Moodling4";
 import Moodling5 from "./svg/Moodling5";
 import { DarkGreenDot, LightGreenDot, YellowDot, OrangeDot, RedDot } from "./svg/Dot";
 
+const synth = window.speechSynthesis;
+const voice =synth.getVoices().find(v=>v.name==='Good news');
+
+console.log({voice})
 const MoodLogger = ({ child, register }) => {
   const [selectedMood, setSelectedMood] = useState(null);
 
@@ -45,6 +49,12 @@ const MoodLogger = ({ child, register }) => {
   ];
 
   const handleMoodSelect = (mood) => {
+    const utterThis = new SpeechSynthesisUtterance('thank you!' + child.name);
+    utterThis.pitch =Math.floor(Math.random() * 2) + 0.5;
+    utterThis.rate = Math.floor(Math.random() * 2) + 0.5;
+    utterThis.voice=voice;
+    synth.speak(utterThis);
+
     register(mood);
   };
 
@@ -52,7 +62,8 @@ const MoodLogger = ({ child, register }) => {
     <>
       <div className="text-center py-6">
         <h2 className="text-2xl font-bold">Hi <span style={{ color: 'f6a21d' }}>{child.name}</span>,</h2>
-        <h2 className="text-2xl font-bold">How are you <span style={{ color: 'f6a21d' }}>feeling</span> today?</h2>
+        <s><h2 className="text-2xl font-bold">How are you <span style={{ color: 'f6a21d' }}>feeling</span> today?</h2></s>
+        <h2 className="text-2xl font-bold">How are you <span style={{ color: 'f6a21d' }}>finding our demo</span> today?</h2>
       </div>
 
       <div className="p-6 space-y-6">
