@@ -73,8 +73,8 @@ export default function App() {
       {page === "kid" && <KidPage children={children} />}
     </div>
   </div>
-    <button onClick={() => { setPage('childList') }}>Reset</button>
-    <button onClick={() => { setPage('childList') }}>Child</button>
+    <button onClick={() => { setPage('childList') }}>Reset</button>&nbsp;
+    <button onClick={() => { setPage('childList') }}>Child</button>&nbsp;
     <button onClick={() => { setPage('dashboard') }}>Dashboard</button>
   </>
 }
