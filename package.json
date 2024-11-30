@@ -13,13 +13,17 @@
     "@types/react": "18.2.38",
     "@types/react-dom": "18.2.15",
     "@vitejs/plugin-react": "^4.2.1",
+    "gh-pages": "^6.2.0",
     "typescript": "4.4.4",
     "vite": "^5.0.11"
   },
+  "homepage": "https://gbatterbee.github.io/SyncNorwichClassmate",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build", 
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": [
     ">0.2%",
