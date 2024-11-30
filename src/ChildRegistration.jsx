@@ -31,7 +31,7 @@ const ChildRegistration = ({ children, select, today }) => {
                   : 'bg-gray-50 hover:bg-gray-100 hover:shadow-md'}
                 `}
             >
-              <span className="text-5xl mb-2"><MonsterIco colour={child.avatar} opacity={child.registration[today] ? 0.1 : 1} /></span>
+              <Avatar child={child} today={today}/>
               <span className="text-sm font-medium text-gray-700">{child.name}</span>
             </button>
           ))}
@@ -47,6 +47,23 @@ const ChildRegistration = ({ children, select, today }) => {
       </div>
 
     </>
+  );
+};
+
+const Avatar = ({ child, today }) => !!child.img ? <CircularImage child={child} today={today}/> : <MonsterIco colour={child.avatar} opacity={child.registration[today] ? 0.1 : 1} />;
+
+const CircularImage = ({ child, today }) => {
+  return (
+    <div className="flex items-center justify-center bg-gray-100">
+      <div className="w-32 h-32">
+        <img
+          src={child.img}
+          alt="Description of Image"
+          className="rounded-full w-full h-full object-cover"
+          style={{ opacity: child.registration[today]?0.2:1,}}
+        />
+      </div>
+    </div>
   );
 };
 

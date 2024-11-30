@@ -9,21 +9,21 @@ export default function App() {
   const [page, setPage] = useState("childList");
   const [children, setChildren] = useState([
     { id: 1, name: 'Layla Carter', avatar: '9747FF', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
-    { id: 2, name: 'Anthony Nelson', avatar: 'F6A21D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
+    { id: 2, name: 'Phil McSweeny', avatar: 'F6A21D',img:'/assets/phil mcsweeney.jpeg', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 3, name: 'Aria Baker', avatar: 'AAF61D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
-    { id: 4, name: 'Sebastian Adams', avatar: 'F61D89', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
-    { id: 5, name: 'Grace Green', avatar: 'F6A21D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
+    { id: 4, name: 'Chris Adams', avatar: 'F61D89', img:'Chris Sargisson.jpeg', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
+    { id: 5, name: 'Ness Dent', avatar: 'F6A21D', img:'/assets/ness dent.jpeg', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 6, name: 'Jackson Scott', avatar: '9747FF', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 7, name: 'Scarlett King', avatar: 'F6A21D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 8, name: 'Matthew Wright', avatar: 'AAF61D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 9, name: 'Ella Allen', avatar: 'F61D89', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 10, name: 'Daniel Hall', avatar: 'F6A21D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 11, name: 'Harper Young', avatar: '9747FF', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
-    { id: 12, name: 'Alexander Walker', avatar: 'F6A21D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
+    { id: 12, name: 'Georgie Delaney', avatar: 'F6A21D', img:'/assets/goergie_delaney.jpeg', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 13, name: 'Evelyn Lewis', avatar: 'AAF61D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 14, name: 'Henry White', avatar: 'F61D89', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 15, name: 'Amelia Jackson', avatar: 'F6A21D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
-    { id: 16, name: 'Lucas Thomas', avatar: '9747FF', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
+    { id: 16, name: 'Roberta Willner', avatar: '9747FF', img:'/assets/roberta_willner.jpeg',registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 17, name: 'Charlotte Anderson', avatar: 'F6A21D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 18, name: 'Benjamin Wilson', avatar: 'AAF61D', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
     { id: 19, name: 'Mia Hernandez', avatar: 'F61D89', registration: { mon: null, tue: null, wed: null, thu: null, fri:null } },
@@ -59,7 +59,8 @@ export default function App() {
 
   }
 
-  return <><div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
+  return <>
+  <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
     <div className="w-full max-w-screen-lg bg-white rounded-2xl shadow-xl overflow-hidden">
 
       {page === "childList" && <ChildRegistration children={children} select={handleSelect} today={today}/>}
